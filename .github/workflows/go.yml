@@ -42,5 +42,5 @@ jobs:
           name: main.bin
       - shell: bash
         run: |
-          /.main.bin
+          ./main.bin
 

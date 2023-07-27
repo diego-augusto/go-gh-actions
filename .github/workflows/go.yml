@@ -57,10 +57,21 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+
       - name: Build and export to Docker
         uses: docker/build-push-action@v4
         with:
           context: .
           load: true
-          tags: diegodev/test:latest
+          tags: diegodev/test:test
 
+      - name: Test
+        run: |
+          docker run --rm diegodev/test:test
+
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: diegodev/test:latest

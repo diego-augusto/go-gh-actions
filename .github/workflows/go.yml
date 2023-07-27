@@ -42,5 +42,6 @@ jobs:
           name: main.bin
       - shell: bash
         run: |
+          chmod +x ./main.bin
           ./main.bin
 

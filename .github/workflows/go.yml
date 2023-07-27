@@ -62,5 +62,5 @@ jobs:
         with:
           context: .
           load: true
-          tags: user/app:latest
+          tags: diegodev/test:latest
 
